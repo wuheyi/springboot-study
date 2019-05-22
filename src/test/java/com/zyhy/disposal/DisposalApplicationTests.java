@@ -29,10 +29,10 @@ public class DisposalApplicationTests {
 		 * PASSWORD: PASSWORD FOR THAT USER
 		 * HOST: IP ADDRESS OF THE SSH SERVER
 		 **/
-		String command = "ls 1.txt";
-		String userName = "root";
-		String password = "TYxy93@1";
-		String connectionIP = "172.28.23.49";
+		String command = "ls FILE_NAME";
+		String userName = "USER";
+		String password = "PASSWORD";
+		String connectionIP = "HOST";
 		SSHManager instance = new SSHManager(userName, password, connectionIP, "");
 		String errorMessage = instance.connect();
 
@@ -42,7 +42,7 @@ public class DisposalApplicationTests {
 			fail();
 		}
 
-		String expResult = "1.txt\n";
+		String expResult = "FILE_NAME\n";
 		// call sendCommand for each command and the output
 		//(without prompts) is returned
 		String result = instance.sendCommand(command);
